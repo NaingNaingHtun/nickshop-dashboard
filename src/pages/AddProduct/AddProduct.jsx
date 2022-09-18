@@ -9,12 +9,10 @@ import { storage } from "../../firebase";
 import { ref } from "firebase/storage";
 import { uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { isAdmin } from "../../authenticateUser";
-import LinearProgressWithLabel from "../../components/LinearProgressWithLabel/LinearProgressWithLabel";
 import { CircularProgress } from "@mui/material";
 import api from "../../api";
 import CircularProgressWithLabel from "../../components/CircularProgressWithLabel/CircularProgressWithLabel";
-import { useParams } from "react-router-dom";
-import { SettingsPhoneRounded } from "@mui/icons-material";
+import { useParams, useNavigate } from "react-router-dom";
 const categoryOptions = [
   { name: "Hat", value: "hat", id: 0 },
   { name: "Glasses", value: "glasses", id: 1 },
@@ -34,17 +32,12 @@ const capitalize = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-let s4 = () => {
-  return Math.floor((1 + Math.random()) * 0x10000)
-    .toString(16)
-    .substring(1);
-};
-
 const sizes = ["xsm", "sm", "md", "lg", "xlg"];
 const AddProduct = () => {
+  const navigate = useNavigate();
+  isAdmin(navigate);
   const { id } = useParams();
   const user = JSON.parse(sessionStorage.getItem("user"));
-  isAdmin();
   const [title, setTitle] = useState("");
   const [currentColor, setCurrentColor] = useState("#ffffff");
   const [colors, setColors] = useState([]);
@@ -100,7 +93,6 @@ const AddProduct = () => {
   };
 
   const updateProduct = async (newContent) => {
-    // console.log(newContent);
     setProductUploading(true);
     await api
       .put(
@@ -257,7 +249,6 @@ const AddProduct = () => {
   }, [photo]);
   //we gonna fetch the product when we have the id
   useEffect(() => {
-    // console.log(id);
     if (id) {
       console.log("fetched product");
       const getProduct = async () => {
@@ -299,7 +290,7 @@ const AddProduct = () => {
 
   const cancel = () => {
     clearStates();
-    window.location.href = "/products";
+    navigate("/products");
   };
   const addColor = () => {
     const newColors = [...colors];
@@ -325,7 +316,6 @@ const AddProduct = () => {
     );
   };
   const addGender = (e) => {
-    // console.log([...genders, e.target.value]);
     if (e.target.checked) {
       setGenders([...genders, e.target.value]);
     } else {

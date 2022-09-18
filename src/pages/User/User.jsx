@@ -26,9 +26,6 @@ const User = () => {
   const [fetchingPrevSixMonths, setFetchingPrevSixMonths] = useState(false);
   const [fetchingPrevSixMonthsByCategory, setFetchingPrevSixMonthsByCategory] =
     useState(false);
-  const [userError, setUserError] = useState(false);
-  const [spendingsError, setSpendingsError] = useState(false);
-  const [ordersError, setOrdersError] = useState(false);
 
   const getUser = async () => {
     setFetchingUser(true);
@@ -41,11 +38,9 @@ const User = () => {
       .then((res) => {
         setFetchingUser(false);
         setUser(res.data);
-        setUserError(false);
       })
       .catch((err) => {
         console.error(err);
-        setUserError(true);
         setFetchingUser(false);
       });
   };
@@ -56,12 +51,9 @@ const User = () => {
       .get(`/orders/prev-six_months_spendings/${userId}`)
       .then((res) => {
         setFetchingPrevSixMonths(false);
-        console.log(res.data);
         setPreviousSixMonthsSpendings(res.data);
-        setSpendingsError(false);
       })
       .catch((err) => {
-        setSpendingsError(true);
         setFetchingPrevSixMonths(false);
         console.log(err);
       });
@@ -73,12 +65,10 @@ const User = () => {
       .get(`/orders/prev_six_months_spendings_by_category/${userId}`)
       .then((res) => {
         setFetchingPrevSixMonthsByCategory(false);
-        console.log(res.data);
         setPreviousSixMonthsSpendingsByCategory(res.data);
         setSpendingsError(false);
       })
       .catch((err) => {
-        setSpendingsError(true);
         setFetchingPrevSixMonthsByCategory(false);
         console.log(err);
       });
@@ -94,14 +84,11 @@ const User = () => {
       })
       .then((res) => {
         setFetchingOrders(false);
-        setOrdersError(false);
-        console.log(res.data);
         setOrders(res.data);
       })
       .catch((err) => {
         console.log(err);
         setFetchingOrders(false);
-        setOrdersError(true);
       });
   };
   //fetch user, previous six months spendings and by category
