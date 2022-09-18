@@ -13,7 +13,7 @@ This project is the basic admin dashboard of [Nick Shop](https://naingnainghtun.
 
 ## Admin Credentials
 
-- username = admin
+- username = admin@gmail.com
 - password = admin
 
 Created by [NaingNaingHtun](https://www.linkedin.com/in/naing-naing-htun-10a133236/)
