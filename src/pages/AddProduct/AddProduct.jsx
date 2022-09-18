@@ -13,7 +13,7 @@ import { CircularProgress } from "@mui/material";
 import api from "../../api";
 import CircularProgressWithLabel from "../../components/CircularProgressWithLabel/CircularProgressWithLabel";
 import { useParams, useNavigate } from "react-router-dom";
-const categoryOptions = [
+const options = [
   { name: "Hat", value: "hat", id: 0 },
   { name: "Glasses", value: "glasses", id: 1 },
   { name: "Coat", value: "coat", id: 2 },
@@ -41,6 +41,7 @@ const AddProduct = () => {
   const [title, setTitle] = useState("");
   const [currentColor, setCurrentColor] = useState("#ffffff");
   const [colors, setColors] = useState([]);
+  const [categoryOptions, setCategoryOptions] = useState([]);
   const [chosenSizes, setChosenSizes] = useState([]);
   const [categories, setCategories] = useState([]);
   const [description, setDescription] = useState("");
@@ -90,6 +91,7 @@ const AddProduct = () => {
     setPhoto(null);
     setInStock(true);
     setPhotoUrl("");
+    setCategoryOptions(options);
   };
 
   const updateProduct = async (newContent) => {
@@ -123,7 +125,6 @@ const AddProduct = () => {
   const upload = async () => {
     if (id && photo) {
       //photo will be updating
-      console.log("updating with photo...");
       const imageRef = ref(storage, "images/" + photo.name);
       const uploadTask = uploadBytesResumable(imageRef, photo);
       setPhotoUploading(true);
@@ -250,7 +251,6 @@ const AddProduct = () => {
   //we gonna fetch the product when we have the id
   useEffect(() => {
     if (id) {
-      console.log("fetched product");
       const getProduct = async () => {
         await api
           .get(`/products/find/${id}`)

@@ -66,7 +66,6 @@ const User = () => {
       .then((res) => {
         setFetchingPrevSixMonthsByCategory(false);
         setPreviousSixMonthsSpendingsByCategory(res.data);
-        setSpendingsError(false);
       })
       .catch((err) => {
         setFetchingPrevSixMonthsByCategory(false);

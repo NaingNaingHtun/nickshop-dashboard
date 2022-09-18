@@ -29,7 +29,7 @@ const UserList = () => {
           </button>
           <button
             className="view"
-            onClick={() => (window.location.href = `/users/${row._id}`)}
+            onClick={() => navigate(`/users/${row._id}`)}
           >
             Details
           </button>
@@ -95,8 +95,8 @@ const UserList = () => {
         <NavBar />
         <div className="add-new-container">
           <div className="title">
-            <span>Customers:</span>
-            <h3>202</h3>
+            <span>Total Customers:</span>
+            <h3>{users.length}</h3>
           </div>
           {error && <div className="error">{errorMessage}</div>}
         </div>

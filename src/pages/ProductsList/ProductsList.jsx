@@ -7,65 +7,65 @@ import { isAdmin } from "../../authenticateUser";
 import DeleteIcon from "@mui/icons-material/Delete";
 import api from "../../api";
 import { useNavigate } from "react-router-dom";
-const columns = [
-  { field: "_id", headerName: "ID", width: 200 },
-  {
-    field: "product",
-    headerName: "Product",
-    sortable: false,
-    renderCell: (params) => (
-      <div className="product-container">
-        <img className="product-img" src={params.row.image} alt="Product" />
-        <p className="product-name">{params.row.title}</p>
-      </div>
-    ),
-    width: 200,
-  },
-  {
-    field: "price",
-    headerName: "Price",
-    renderCell: (params) => <span>$ {params.row.price}</span>,
-    width: 100,
-  },
-  {
-    field: "colors",
-    headerName: "Colors",
-    sortable: false,
-    renderCell: (params) => (
-      <div className="colors">
-        {params.row.colors.map((color) => (
-          <div className="color" style={{ backgroundColor: color }}></div>
-        ))}
-      </div>
-    ),
-    width: 200,
-  },
-  {
-    field: "Categories",
-    headerName: "Categories",
-    width: 150,
-    sortable: false,
-    renderCell: (params) => <div>{params.row.category.join(", ")}</div>,
-  },
-  {
-    field: "sizes",
-    headerName: "Sizes",
-    width: 150,
-    sortable: false,
-    renderCell: (params) => <div>{params.row.sizes.join(", ")}</div>,
-  },
-  {
-    field: "Gender",
-    headerName: "Gender",
-    sortable: false,
-    width: 150,
-    renderCell: (params) => <div>{params.row.for.join(", ")}</div>,
-  },
-];
 
 const ProductsList = () => {
   const navigate = useNavigate();
   isAdmin(navigate);
+  const columns = [
+    { field: "_id", headerName: "ID", width: 200 },
+    {
+      field: "product",
+      headerName: "Product",
+      sortable: false,
+      renderCell: (params) => (
+        <div className="product-container">
+          <img className="product-img" src={params.row.image} alt="Product" />
+          <p className="product-name">{params.row.title}</p>
+        </div>
+      ),
+      width: 200,
+    },
+    {
+      field: "price",
+      headerName: "Price",
+      renderCell: (params) => <span>$ {params.row.price}</span>,
+      width: 100,
+    },
+    {
+      field: "colors",
+      headerName: "Colors",
+      sortable: false,
+      renderCell: (params) => (
+        <div className="colors">
+          {params.row.colors.map((color) => (
+            <div className="color" style={{ backgroundColor: color }}></div>
+          ))}
+        </div>
+      ),
+      width: 200,
+    },
+    {
+      field: "Categories",
+      headerName: "Categories",
+      width: 150,
+      sortable: false,
+      renderCell: (params) => <div>{params.row.category.join(", ")}</div>,
+    },
+    {
+      field: "sizes",
+      headerName: "Sizes",
+      width: 150,
+      sortable: false,
+      renderCell: (params) => <div>{params.row.sizes.join(", ")}</div>,
+    },
+    {
+      field: "Gender",
+      headerName: "Gender",
+      sortable: false,
+      width: 150,
+      renderCell: (params) => <div>{params.row.for.join(", ")}</div>,
+    },
+  ];
   const user = JSON.parse(sessionStorage.getItem("user"));
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
@@ -90,9 +90,7 @@ const ProductsList = () => {
           </button>
           <button
             className="edit"
-            onClick={() =>
-              (window.location.href = `/products/new/${params.row._id}`)
-            }
+            onClick={() => navigate(`/products/new/${params.row._id}`)}
           >
             Edit
           </button>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./userstable.scss";
 import { DataGrid } from "@mui/x-data-grid";
+import { useNavigate } from "react-router-dom";
 const columns = [
   { field: "_id", headerName: "ID", width: 200 },
   {
@@ -24,6 +25,7 @@ const columns = [
   { field: "address", headerName: "Address", width: 250 },
 ];
 const UsersTable = ({ users, loading, actionColumn }) => {
+  const navigate = useNavigate();
   return (
     <div className="datatable">
       <DataGrid
@@ -32,9 +34,7 @@ const UsersTable = ({ users, loading, actionColumn }) => {
         columns={columns.concat(actionColumn)}
         pageSize={10}
         getRowId={(row) => row._id}
-        onRowClick={(param) =>
-          (window.location.href = "/users/" + param.row._id)
-        }
+        onRowClick={(param) => navigate("/users/" + param.row._id)}
         rowsPerPageOptions={[10]}
       />
     </div>
