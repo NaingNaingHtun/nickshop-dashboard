@@ -1,0 +1,59 @@
+.datatable {
+    height: 90vh;
+    padding: 0px 10px;
+    .cellWithImg {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .name {
+            font-size: 16px;
+        }
+    }
+    .status {
+        width: 100px;
+        &.Active {
+            color: rgb(9, 83, 9);
+            background-color: rgb(182, 236, 182);
+        }
+        &.Pending {
+            color: rgb(99, 99, 16);
+            background-color: rgb(254, 254, 191);
+        }
+        &.Passive {
+            color: purple;
+            background-color: rgb(240, 191, 240);
+        }
+    }
+    .action {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        button {
+            padding: 5px;
+            width: 50px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer
+        }
+        .view {
+            color: white;
+            background-color: black;
+        }
+        .delete {
+            color: rgb(255, 45, 45);
+            background-color: transparent;
+        }
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .datatable {
+        width: 95vw;
+    }
+}

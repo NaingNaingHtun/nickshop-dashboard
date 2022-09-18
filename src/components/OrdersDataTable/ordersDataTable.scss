@@ -1,0 +1,47 @@
+.orders-grid {
+    height: 90vh;
+    .delete {
+            color: rgb(255, 45, 45);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+    }
+    .products_ids {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+        // border: 1px solid red;
+    }
+    .id {
+            cursor: pointer;
+            &:hover {
+                color: blue;
+            }
+        }
+    .status {
+        color: white;
+        &.Pending {
+            background-color: rgb(253, 172, 172);
+            color: red;
+        }
+        &.Shipping {
+            background-color: rgb(248, 248, 172);
+            color: yellow;
+            
+        }
+        &.Shipped {
+            background-color: rgb(172, 248, 172);
+            color: green;
+        }
+    }
+
+    
+}
+
+@media only screen and (min-width: 575.98px) {
+    
+}
+@media only screen and (max-width: 576px) {
+    
+}

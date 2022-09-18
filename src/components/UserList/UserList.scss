@@ -1,0 +1,33 @@
+.userlist {
+    display: flex;
+    .usersContainer {
+        flex: 6;
+        .add-new-container {
+            padding: 10px;
+            .error {
+                color: red;
+                background-color: rgb(255, 180, 180);
+                padding: 10px;
+            }
+            .title {
+                display: flex;
+                align-items: baseline;
+                gap: 5px;
+            }
+            .add-new {
+                padding: 5px;
+                border-radius: 4px;
+                background-color: blue;
+                color: white;
+                border: none;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 575.98px) {
+    .usersContainer {
+        width: 100vw;
+    }
+}

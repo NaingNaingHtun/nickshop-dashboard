@@ -1,0 +1,81 @@
+.product {
+    display: flex;
+    .productContainer {
+        flex: 6;
+        .product-top {
+            display: flex;
+            margin: 10px;
+            
+            gap: 20px;
+            
+            .product-top-left {
+                flex: 2;
+                box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                -webkit-box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                -moz-box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                border-radius: 10px;
+                display: flex;
+                padding: 10px;
+                gap: 20px;
+                    img {
+                        width: 300px;
+                        height: 350px;
+                        object-fit: contain;
+                        flex: 1;
+                    }
+                .product-details {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    .info {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 5px;
+                    
+                        .info-title {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .product-top-right {
+                flex: 1;
+                box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                -webkit-box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                -moz-box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                border-radius: 10px;
+                padding: 10px;
+            }
+        }
+
+        .product-bottom {
+            margin: 10px;
+            box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+            -webkit-box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+            -moz-box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+            border-radius: 10px;
+            padding: 10px;
+            h1 {
+                font-size: 18px;
+                color: gray;
+                font-weight: 400;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 576px) {//from medium screens
+
+}
+@media only screen and (max-width: 575.98px) {//from small screens
+    .product-top, .product-top-left, .product-bottom {
+        flex-direction: column;
+        width: 90vw;
+    }
+    .product-top{
+        gap: 10px;
+    }
+    
+}

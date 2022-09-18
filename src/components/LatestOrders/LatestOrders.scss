@@ -1,0 +1,26 @@
+.product-ids {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    flex-direction: column;
+}
+.status {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    &.approved{
+        color: green;
+        background-color: lightgreen;
+    }
+    &.pending {
+        color: red;
+        background-color: rgb(243, 126, 126);
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .latest-orders {
+        width: 100vw;
+        // border: 1px solid red;
+    }
+}

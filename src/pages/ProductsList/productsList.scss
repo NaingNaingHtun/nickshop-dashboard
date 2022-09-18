@@ -1,0 +1,117 @@
+.products-list {
+    display: flex;
+    .products-container {
+        flex: 6;
+
+        .products-top {
+            display: flex;
+            justify-content: space-between;
+            .title {
+                font-size: 20px;
+                font-weight: 500;
+                // font-weight: bold;
+                margin-right: 5px;
+            }
+            .create-btn {
+                padding: 8px;
+                color: white;
+                background-color: black;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+        }  
+
+        .products-center {
+            padding: 10px;
+
+            .product-search{
+                outline: none;
+                padding: 5px;
+                font-size: 16px;
+            }
+        }
+
+        .delete-error {
+            color: red;
+            background-color: rgb(255, 173, 173);
+            padding: 5px;
+        }
+        .products-bottom {
+           
+            // width: 100vw;
+
+            .action {
+                display: flex;
+                gap: 10px;
+
+                .delete {
+                width: 50px;
+                // border: 1px solid red;
+                border: none;
+                color: red;
+                background-color: white;
+                border-radius: 4px;
+                padding: 5px;
+                cursor: pointer;
+            }
+            .edit {
+                width: 50px;
+                color: white;
+                border: none;
+                background-color: black;
+                border-radius: 4px;
+                padding: 5px;
+                cursor: pointer;
+                }
+            
+            }
+            .product-container {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                .product-img {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                }
+            }
+
+            .colors {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                // width: 200px;
+
+                .color{
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    border: 1px solid black;
+                }
+            }
+        }
+
+        }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .products-top,.products-center, .products-bottom {
+        margin: 10px;
+    }
+    .products-bottom {
+        height: 75vh;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .products-top, .products-center, .products-bottom {
+        margin: 20px;
+    }
+    .products-bottom {
+         height: 90vh;
+    }
+}

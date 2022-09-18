@@ -1,0 +1,294 @@
+.addProduct {
+    display: flex;
+    .add-product-container {
+        flex: 6;
+        .product-getting-error {
+                    color: red;
+                    background-color: rgb(252, 172, 172);
+                    padding: 10px;
+                    margin: 0px 20px;
+                }
+        .add-container {
+                display: flex;
+                gap: 20px;
+                padding: 10px;
+                box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                -webkit-box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                -moz-box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.4);
+                border-radius: 10px;
+
+                
+                .left {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    .title-input {
+                        outline: 1px solid black;
+                        border: none;
+                        padding: 7px;
+                        font-size: 18px;
+                        // background-color: lightblack;
+                    }
+                    .color-picker {
+                        display: flex;
+                        padding: 10px;
+                        height: 200px;
+                        gap: 20px;
+                        .react-colorful {
+                            flex: 1;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .current-color-container {
+                            flex: 1;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            .current-color {
+                                width: 100%;
+                                height: 100%;
+                                border: 1px solid black;
+                            }
+                            button {
+                                padding: 5px;
+                                border: none;
+                                background-color: black;
+                                font-size: 18px;
+                                color: white;
+                                border-radius: 4px;
+                                cursor: pointer;
+                            }
+
+
+                        }
+                        
+                    }
+                    .chosenColors {
+                        height: 80px;
+                        width: 100%;
+                        overflow: scroll;
+                        border: 1px solid black;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        align-items: center;
+                        padding: 10px 0px;
+                        .no-color {
+                            text-align: center;
+                            flex: 1;
+                            // border: 2px solid red;
+                        }
+                        .color {
+                            width: 50px;
+                            height: 50px;
+                            border: 1px solid black;
+                            position: relative;
+                            border-radius: 4px;
+                        }
+                        .close-icon {
+                            position: absolute;
+                            top: -10px;
+                            right: -10px;
+                            cursor: pointer;
+                            background-color: red;
+                            color: white;
+                            // padding: 1px;
+                            border-radius: 50%;
+                        }
+                    }
+                    .sizes {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        .size {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            .checkbox {
+                        width: 20px;
+                        height: 20px;
+                        }
+                        
+                    }
+                    }
+                    .genders {
+                        display: flex;
+                        gap: 10px;
+                        .checkbox {
+                        width: 20px;
+                        height: 20px;
+                        }
+                        .gender {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                    .instock-container {
+                        display: flex;
+                        gap: 8px;
+
+                        .yes-container, .no-container {
+                        display: flex;
+                        gap: 4px;
+
+                        input {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                    }
+                    
+                    .price-input {
+                        padding: 5px;
+                        font-size: 16px
+                    }
+
+                }
+                .right {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding-right: 10px;
+                    .desc {
+                        height: 150px;
+                        outline: 1px solid black;
+                        border: none;
+                        font-size: 16px;
+                        padding: 4px;
+                        border-radius: 4px;
+                    }
+                    
+                    .upload-btn {
+                        padding: 5px;
+                        font-size: 16px;
+                        border: none;
+                        background-color: black;
+                        color: white;
+                        cursor: pointer;
+                        margin-left: 4px;
+                    }
+
+                    .photo-container { 
+                        width: 100%;
+                        height: 300px;
+                        border: 1px solid black;
+                        position: relative;
+
+                        .photo {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+
+                        .no-photo {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .uploading {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: rgba(128, 128, 128, 0.3);
+                        }
+                    }
+
+                    .actions {
+                        display: flex;
+                        justify-content: space-between;
+                        .actions-right {
+                            display: flex;
+                            gap: 4px;
+                        }
+                        .reset-btn,.create-btn,.cancel-btn {
+                            padding: 5px;
+                            border: 1px solid black;
+                            font-size: 16px;
+                            cursor: pointer;
+                         }
+
+                         .reset-btn {
+                            color: red;
+                            border: 1px solid red;
+                         }
+
+                         .create-btn {
+                            color: white;
+                            background-color: black;
+                            border: none;
+                            &:disabled {
+                                cursor: not-allowed;
+                                background-color: rgb(231, 231, 231);
+                                color: gray;
+                            }
+                         }
+                    }
+
+                    .product-upload {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                        .upload-success {
+                            color: green;
+                            background-color: rgb(177, 255, 177);
+                            padding: 5px;
+                        }
+                        .upload-error {
+                            color: red;
+                            background-color: rgb(255, 172, 172);
+                            padding: 5px;
+                        }
+                    
+                }
+            }
+    }
+}
+
+@media only screen and  (max-width: 575.98px) { //small screens
+        .add-product-container {
+            width: 100vw;
+            .wrapper {
+                padding: 10px 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            .add-container {
+                flex-direction: column;
+                width: 100%;
+                
+                .right {
+                    padding: 0;
+                    width: 100%;
+                    .desc {
+                        width: 100%;
+                    }
+                }
+        }
+        }
+            
+    }
+ }
+
+ @media only screen and  (min-width: 576px) { //from medium screens
+    .add-container {
+        flex-direction: row;
+        margin: 20px;
+        // width: 100vw;
+        
+        
+    }
+ }

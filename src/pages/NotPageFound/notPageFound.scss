@@ -1,0 +1,19 @@
+.not-page-found-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    .not-page-found-title {
+        font-size: 50px;
+        font-weight: bold;
+        color: blue;
+    }
+    
+    .not-page-found-text{
+        font-size: 25px;
+    }
+}

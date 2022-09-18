@@ -1,0 +1,48 @@
+.navbar {
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .account-container {
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        h1 {
+            font-size: 23px;
+        }
+        .greeting{
+            color: gray;
+            font-weight: 400;
+            font-style: 14px;
+        }
+    }
+
+    .logout {
+        margin-left: 25px;
+        font-style: 16px;
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 4px;
+        border-radius: 4px;
+    }
+    
+}
+
+@media only screen and (max-width: 575.98px) {//small screens
+    .navbar {
+        display: flex;
+        width: 100vw;
+        // border: 1px solid red;
+    }
+
+}
+@media (min-width: 576px) { //medium screens
+ .navbar{
+        display: none;
+    }
+ }
