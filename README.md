@@ -11,4 +11,9 @@ This project is the basic admin dashboard of [Nick Shop](https://naingnainghtun.
 - Scss
 - and other components libraries
 
+## Admin Credentials
+
+- username = admin
+- password = admin
+
 Created by [NaingNaingHtun](https://www.linkedin.com/in/naing-naing-htun-10a133236/)
