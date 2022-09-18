@@ -182,7 +182,7 @@ const ProductsList = () => {
           </div>
           <button
             className="create-btn"
-            onClick={() => (window.location.href = "/products/new")}
+            onClick={() => navigate("/products/new")}
           >
             New Product
           </button>
